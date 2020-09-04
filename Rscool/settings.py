@@ -29,15 +29,23 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
+    #myApp
+    'account',
+    'lesson',
+    'homework',
+    'message',
+
+    #Django App
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,7 +62,7 @@ ROOT_URLCONF = 'Rscool.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +75,7 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = 'account.MyUser'
 WSGI_APPLICATION = 'Rscool.wsgi.application'
 
 
@@ -117,4 +126,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
+
+MEDIA_ROOT ='media'
+
+LOGIN_URL = ''
+LOGOUT_REDIRECT_URL = ''
+#account
+#lesson
+#homework
+#exam
+#message
