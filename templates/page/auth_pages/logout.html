@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        Logout
+    {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'auth_pages/logout.css' %}">
+{% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div class="logout-wrapper">
+        <div class="text-content">
+            <H2>Oturumunuz başarıyla sonlandırıldı .</H2>
+            <a href="/">Giriş Yapmak İçin Tıklayınız .</a>
+        </div>
+        <div class="image-content">
+            <img src="{% static 'auth_pages/img/logout.svg' %}" alt="">
+        </div>
+        </div>
+    {% endblock %}
+
+
+</body>
+</html>

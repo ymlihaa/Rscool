@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="{% static 'home/base.css' %}">
     <link rel="stylesheet" href="{% static 'home/header.css' %}">
     <link rel="stylesheet" href="{% static 'home/foo.css' %}">
+    {% block css %}
+    
+    {% endblock %}
     <title> {% block title %}
     {% endblock %}</title>
 </head>
 <body>
 {% include 'home/header.html' %}
 
-{% include 'page/auth_pages/login.html' %}
+    {% block content %}
+    
+    {% endblock %}
 
 {#{% include 'home/foo.html' %}#}
 </body>

@@ -1,10 +1,14 @@
+{% extends 'home/base.html' %}
 {% load static %}
+{% block css %}
+        <link rel="stylesheet" href="{% static 'auth_pages/login.css' %}">
+{% endblock %}
 
-<link rel="stylesheet" href="{% static 'auth_pages/login.css' %}">
 
 
 
 {% block content %}
+
     <div class="login">
         <div class="loginForm">
             <form method="post">

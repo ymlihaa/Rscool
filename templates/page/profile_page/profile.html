@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+        Profile
+    {% endblock %} </title>
+</head>
+<body>
+
+    {% block content %}
+        {% if user.is_authenticated %}
+        {% if user.role == True %}
+        {% else %}
+
+        {% endif %}
+        {% else %}
+                    <h1>Lütfen giriş yapınız</h1>
+
+        {% endif %}
+
+    {% endblock %}
+
+
+
+
+</body>
+</html>

@@ -137,7 +137,7 @@ STATICFILES_DIRS = [
 MEDIA_ROOT ='media'
 
 LOGIN_URL = ''
-LOGOUT_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = 'profile/'
 #account
 #lesson
 #homework

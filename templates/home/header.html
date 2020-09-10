@@ -1,8 +1,13 @@
 <div class="header">
-    <div id="logo">LOGO</div>
-    <ul>
-        <li>Home</li>
-        <li>account</li>
-        <li>settings</li>
-    </ul>
+    <div id="logo"><h1>Rschool.com</h1>
+        <h5>This is very cool ...</h5></div>
+     {% if not user.is_authenticated %}
+        <ul>
+            <li>Home</li>
+            <li>account</li>
+            <li>settings</li>
+        </ul>
+
+
+    {% endif %}
 </div>
