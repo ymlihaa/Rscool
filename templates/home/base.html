@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content=title"width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'home/base.css' %}">
+    <link rel="stylesheet" href="{% static 'home/header.css' %}">
+    <link rel="stylesheet" href="{% static 'home/foo.css' %}">
     <title> {% block title %}
-    {% endblock%}</title>
+    {% endblock %}</title>
 </head>
 <body>
-     {% include 'home/header.html' %}
-     
-        {% block content %}
+{% include 'home/header.html' %}
 
-        {% endblock %}
+{% include 'page/auth_pages/login.html' %}
+
+{% include 'home/foo.html' %}
 </body>
 </html>
