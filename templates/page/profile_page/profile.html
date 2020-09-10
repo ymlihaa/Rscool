@@ -7,23 +7,32 @@
     <title>{% block title %}
         Profile
     {% endblock %} </title>
+{% block css %}
+    <link rel="stylesheet" href="{% static  'profile_page/profile.css' %}">
+{% endblock %}
 </head>
 <body>
 
-    {% block content %}
-        {% if user.is_authenticated %}
+{% block content %}
+    {% if user.is_authenticated %}
         {% if user.role == True %}
+
         {% else %}
-
+        {{ user.role }}
         {% endif %}
-        {% else %}
-                    <h1>Lütfen giriş yapınız</h1>
+    {% else %}
+        <div class="authenticate-error">
+        <div class="text-content">
+            <p>Lütfen giriş yapınız .</p>
+            <a href="/">Giriş Sayfasına gitmek için tıklayınız. </a>
+            </div>
+    <div class="image-content">
+            <img src="{% static 'auth_pages/img/notauth.svg' %}" alt="">
+    </div>
+    </div>
+    {% endif %}
 
-        {% endif %}
-
-    {% endblock %}
-
-
+{% endblock %}
 
 
 </body>
