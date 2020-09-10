@@ -40,7 +40,7 @@ class MyUserManager(BaseUserManager):
 
 class MyUser(AbstractBaseUser):
     username = models.CharField(
-        verbose_name='username address',
+        verbose_name='Kullanıcı Adı',
         max_length=255,
         unique=True,
     )

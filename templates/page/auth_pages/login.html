@@ -7,11 +7,11 @@
 {% block content %}
     <div class="login">
         <div class="loginForm">
-
             <form method="post">
                 {% csrf_token %}
+
+
                 <table>
-                    <h5>Rscool. This so cool.</h5>
                     <tr>
                         <td>{{ form.username.label_tag }}</td>
                         <td>{{ form.username }}</td>
@@ -43,7 +43,7 @@
 
         {# Assumes you setup the password_reset view in your URLconf #}
         {% comment %} <p><a href="{% url 'password_reset' %}">Lost password?</a></p> {% endcomment %}
-        <img src="{% static 'auth_pages/img/book_lover.svg' %}" alt="book">
+        <img src="{% static 'auth_pages/img/book.png' %}" alt="book">
     </div>
 
 {% endblock %}
