@@ -49,7 +49,7 @@ class MyUser(AbstractBaseUser):
     surname = models.CharField(verbose_name='surname', max_length=30)
 
     # User profile Photos
-    profile_photo = models.ImageField(verbose_name='PP', upload_to='pp')
+    profile_photo = models.ImageField(verbose_name='PP', upload_to='pp/')
 
     # User is Teacher ?
     role = models.BooleanField(default=False)

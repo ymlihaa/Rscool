@@ -20,6 +20,8 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import  LogoutView
 from django.conf import settings
 from django.views.generic import TemplateView
+
+from django.conf.urls.static import static
 urlpatterns = [
        path(
         '',
@@ -35,3 +37,4 @@ path(
     url(r'^profile/logout/$', LogoutView.as_view(template_name='page/auth_pages/logout.html'), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
 
 ]
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
