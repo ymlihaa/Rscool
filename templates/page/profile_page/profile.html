@@ -15,12 +15,14 @@
 
 {% block content %}
     {% if user.is_authenticated %}
+        <div class="wrapper">
+            <img src="{% static 'profile_page/img/profilebackground.svg' %}" alt="">
         <div class="user-box">
-        <div class="pp-content">
-               <img src="{{ MEDIA_URL }}{{ user.profile_photo.url }}">
+
+            <h3 id="title">Hoşgeldin {{ user.name}} {{ user.surname }}</h3>
         </div>
-            <h3 id="title">{{ user.name}}{{ user.surname }}</h3>
-        </div>
+                </div>
+
     {% else %}
         <div class="authenticate-error">
             <div class="text-content">

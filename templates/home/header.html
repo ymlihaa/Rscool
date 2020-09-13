@@ -1,12 +1,15 @@
+{% load static %}
 <div class="header">
     <div id="logo"><h1>Rschool.com</h1>
         <h5>This is very cool ...</h5></div>
      {% if  user.is_authenticated %}
         <ul>
-            <li>Home</li>
-            <li>account</li>
-            <li>settings</li>
-        <li><a href="logout">Logout</a></li>
+            <li><a href=""><img src="{% static 'home/img/home.svg' %}" alt="home"></a></li>
+            <li><img src="{% static 'home/img/setting.svg' %}" alt="setting"></li>
+            {% if user.profile.url %}
+            <li id="user"><img id="pp" src="{{ MEDIA_URL }}{{ user.profile_photo.url }}" alt=""><p>{{ user.name }} {{ user.surname }}</p></li>
+            {% endif %}
+            <li><a href="logout/"><img src="{% static 'home/img/sign-out-alt.svg' %}" alt="logout   "></a></li>
         </ul>
 
 

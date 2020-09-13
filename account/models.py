@@ -14,8 +14,8 @@ class MyUserManager(BaseUserManager):
 
         user = self.model(
             username=username,
-            name=name,
-            surname=surname,
+            name=name.upper(),
+            surname=surname.upper(),
 
         )
 

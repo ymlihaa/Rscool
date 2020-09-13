@@ -20,7 +20,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import  LogoutView
 from django.conf import settings
 from django.views.generic import TemplateView
-
+from account.views import router
 from django.conf.urls.static import static
 urlpatterns = [
        path(
@@ -28,13 +28,14 @@ urlpatterns = [
         auth_views.LoginView.as_view(template_name='page/auth_pages/login.html'),
     ),
 
-path(
-        'profile/',
-        TemplateView.as_view(template_name='page/profile_page/profile.html'),
-    ),
+# path(
+#         'profile/',
+#         TemplateView.as_view(template_name='page/profile_page/profile.html'),
+#     ),
+    path('profile/',router.profileRedirect),
     path('admin/', admin.site.urls),
 
     url(r'^profile/logout/$', LogoutView.as_view(template_name='page/auth_pages/logout.html'), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
-
+path('djrichtextfield/', include('djrichtextfield.urls'))
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
