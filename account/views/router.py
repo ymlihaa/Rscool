@@ -13,8 +13,7 @@ def profileRedirect(request):
 		#data = Lesson.objects.get(userID=request.user.id)
 		if role :
 			# Burada Hoca sayfasını render et
-			return HttpResponse(Lesson_data)
-
+			return render(request,'page/profile_page/profile.html',{'data': Lesson_data})
 		else:
 			#BURADA ÖĞRENCİ SAYFASINI RENDER ET
 
