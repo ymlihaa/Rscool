@@ -24,7 +24,12 @@
 }
 
 form {
+    padding: 20px;
+    border-radius: 8px;
     opacity: 100 !important;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px;
+
+
 }
 
 .inputs {
@@ -68,18 +73,19 @@ form {
 
 form button[type='submit'] {
     border: 0;
+    margin-top: 10px;
     border-radius: 8px;
     width: 100px;
-    padding: 15px;
-    background-color:#a8dadc ;
+    padding: 10px;
+    background-color: #008CBA;
     color: black;
     transition: ease .3s;
 }
 
 
  form button[type='submit']:hover {
-    background-color: #008CBA;
-    color: white;
+    background-color:#a8dadc ;
+    color: black;
 }
 
 

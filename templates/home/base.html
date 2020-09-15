@@ -4,22 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content=title"width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'home/base.css' %}">
     <link rel="stylesheet" href="{% static 'home/header.css' %}">
-    <link rel="stylesheet" href="{% static 'home/foo.css' %}">
-    {% block css %}
-    
+    <link rel="stylesheet" href="{% static 'home/base.css' %}">
+
+    {% block title %}
     {% endblock %}
 
+    {% block css %}
+    {% endblock %}
 </head>
 
-{% include 'home/header.html' %}
 <body>
+{% include 'home/header.html' %}
 
+<div class="base-wrapper">
     {% block content %}
     
     {% endblock %}
-
-{#{% include 'home/foo.html' %}#}
+</div>
 </body>
 </html>

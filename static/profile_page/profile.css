@@ -1,73 +1,84 @@
-.wrapper{
+.global-wrapper {
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
+    height: 100vh;
+    background-image: url("../../static/profile_page/img/teacher03.svg") !important;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-/*.wrapper img{
-    position: fixed;
-     z-index: -1;
-}*/
-
-/*.authenticate-error{
-       width: 100%;
-    height: 100%;
+.flex {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
-}*/
-/*.user-box{
-    width: 100%;
-    height: 100%;
-    display: flex;
-}*/
-
-.deneme{
-    width: 300px;
-    height: 500px;
-    background-color: #5ee4ff;
-}
-/*.text-content{*/
-/*    padding: 30px;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    text-align: center;*/
-/*    font-weight: bold;*/
-/*    margin-bottom: 30px;*/
-/*}*/
-
-/*.text-content a{*/
-/*    text-decoration: none;*/
-/*    color: #008CBA;*/
-/*}*/
-
-/*
-.image-content{
-    width: 100%;
-    height: auto;
-    display: flex;
     justify-content: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row !important;
     align-items: center;
-    padding: 10px;
-}
-*/
-
-/*
-.image-content img{
-    width: 60vh;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.pp-content{
-    width: 100px;
-    height: 100px;
+@media only screen and (max-width: 600px) {
+    .flex-row {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.pp-content img{
+.lesson-wrapper {
+    padding: 50px;
+}
+
+.lesson-card {
+    background-color: rgba(0,140,186,.2);
+    margin: 10px;
+    padding: 50px;
+    border-radius: 30px;
+    transition: box-shadow 0.2s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px;
+}
+
+.lesson-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 30px 60px;
+}
+
+.lesson-name {
     width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    background-color: #008CBA;
+    color: white;
+    padding: 10px;
+    border-radius: 15px 15px 8px 8px;
 
 }
-*/
 
+.lesson-detail {
+    margin: 20px;
+}
+
+
+.lesson-redirect button {
+    border: 0;
+    margin-top: 10px;
+    border-radius: 8px;
+    width: 150px;
+    padding: 10px;
+    background-color: #008CBA;
+    color: white;
+    transition: ease .3s;
+}
+
+.lesson-redirect button:hover {
+    background-color: #a8dadc;
+    color: black;
+}
+
+
+button a {
+    text-decoration: none;
+    color: white;
+}

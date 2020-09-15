@@ -30,7 +30,7 @@ urlpatterns = [
 
 # path(
 #         'profile/',
-#         TemplateView.as_view(template_name='page/profile_page/profile.html'),
+#         TemplateView.as_view(template_name='page/profile_page/teacher_profile.html'),
 #     ),
     path('profile/',router.profileRedirect),
     path('admin/', admin.site.urls),

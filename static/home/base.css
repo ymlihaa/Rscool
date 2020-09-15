@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
-*{
-    margin:0;
-    padding:0;
-  font-family: 'Kufam', cursive;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kufam', cursive;
 
 }
 
-body{
+body {
     background-color: #f1faee;
     font-family: 'Kufam', cursive;
+}
+
+.base-wrapper{
+    width: 100%;
+    height: 100%;
 }
