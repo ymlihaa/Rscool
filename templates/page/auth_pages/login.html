@@ -1,7 +1,7 @@
 {% extends 'home/base.html' %}
 {% load static %}
 {% block css %}
-        <link rel="stylesheet" href="{% static 'auth_pages/login.css' %}">
+    <link rel="stylesheet" href="{% static 'auth_pages/login.css' %}">
 {% endblock %}
 
 
@@ -9,47 +9,52 @@
 
 {% block content %}
 
-    <div class="login">
-        <div class="loginForm">
-            <form method="post">
-                {% csrf_token %}
+    <div class="login flex">
+    <div class="errors flex">
+              {% if form.errors %}
+                  Your username and password didn't match. Please try again.
+              {% endif %}
 
-
-                <table>
-                    <tr>
-                        <td>{{ form.username.label_tag }}</td>
-                        <td>{{ form.username }}</td>
-                    </tr>
-                    <tr>
-
-                        <td>{{ form.password.label_tag }}</td>
-                        <td>{{ form.password }}</td>
-                    </tr>
-                </table>
-
-                <input type="submit" value="login">
-                <input type="hidden" name="next" value="{{ next }}">
-            </form>
-            <div class="errors">
-                {% if form.errors %}
-                    Your username and password didn't match. Please try again.
+              {% if next %}
+                  {% if user.is_authenticated %}
+                       <p>Your account doesn't have access to this page. To proceed,
+                          please login with an account that has access.</p>
+                  {% else %}
+                     <p>Please login to see this page.</p>
+                  {% endif %}
                 {% endif %}
+          </div>
+    <div class="form-wrapper ">
+        <form method="post" class="flex">
+            {% csrf_token %}
 
-                {% if next %}
-                    {% if user.is_authenticated %}
-                        <p>Your account doesn't have access to this page. To proceed,
-                            please login with an account that has access.</p>
-                    {% else %}
-                        <p>Please login to see this page.</p>
-                    {% endif %}
-                {% endif %}
+            <div class="inputs flex">
+
+                <section class="input-box flex">
+                    <h3>
+                    {{ form.username.label_tag }}
+                    </h3>
+                        {{ form.username }}
+                </section>
+                <section class="input-box flex">
+                    <h3>
+                    {{ form.password.label_tag }}
+                    </h3>
+                        {{ form.password }}
+                </section>
             </div>
+                <button type="submit"><b>Sign in</b></button>
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
         </div>
 
+       </div>
         {# Assumes you setup the password_reset view in your URLconf #}
         {% comment %} <p><a href="{% url 'password_reset' %}">Lost password?</a></p> {% endcomment %}
-        <img src="{% static 'auth_pages/img/login01.svg' %}" alt="book">
+{#        <img src="{% static 'auth_pages/img/login01.svg' %}" alt="book">#}
     </div>
 
 {% endblock %}
+
+
 
