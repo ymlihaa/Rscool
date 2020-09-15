@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Profile</title>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static  'profile_page/student_profile.css' %}">
+{% endblock %}
+
+
+
+
+{% block content %}
+    <div class="global-wrapper">
+
+
+
+        <div class="lesson-wrapper flex-row">
+            {% for i in data %}
+                <div class="lesson-card flex">
+                    <section class="lesson-name flex">
+                        <p>{{ i }}</p>
+                    </section>
+                    <section class="lesson-detail flex">
+                        {{ i.description }}
+                    </section>
+                    <section class="lesson-redirect flex">
+                        <a href="/{{ i }}">
+                            <button>Derse Git -></button>
+                        </a>
+                    </section>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}
+

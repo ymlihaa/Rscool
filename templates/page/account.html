@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Account</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static  'head_pages/account.css' %}">
+{% endblock %}
+
+{% block content %}
+    
+    <div class="account-wrapper flex">
+        <div class="account-form flex">
+            <section class="profile-photo">
+                <img src="{{ MEDIA_URL }}{{ user.profile_photo.url }}" alt="pp">
+            </section>
+            <section class="account-info">
+                    <p> {{ user.name }} {{ user.surname }}</p>
+            </section>
+        {% if user.role %}
+            <p>Verilen Dersler</p>
+            {% else %}
+            <p>Alınan Dersler</p>
+
+        {% endif %}
+            <div class="lessons">
+                {% for foo in data %}
+                    <div id="lesson-li">{{ foo }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

@@ -33,6 +33,7 @@ urlpatterns = [
 #         TemplateView.as_view(template_name='page/profile_page/teacher_profile.html'),
 #     ),
     path('profile/',router.profileRedirect),
+    path('profile/account/', router.accountRedirect),
     path('admin/', admin.site.urls),
 
     url(r'^profile/logout/$', LogoutView.as_view(template_name='page/auth_pages/logout.html'), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),

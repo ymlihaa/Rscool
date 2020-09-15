@@ -3,16 +3,18 @@
 <div class="header">
     <div id="logo"><h1>Rschool.com</h1>
         <h5>This is very cool ...</h5></div>
-     {% if  user.is_authenticated %}
+    {% if  user.is_authenticated %}
         <ul>
-            <li><a href=""><img src="{% static 'home/img/home.svg' %}" alt="home"></a></li>
-            <li><img src="{% static 'home/img/setting.svg' %}" alt="setting"></li>
+            <li class="list-item"><a href=""><img src="{% static 'home/img/home.svg' %}" alt="home"></a>Home</li>
+            <li class="list-item"><img src="{% static 'home/img/setting.svg' %}" alt="setting">Settings</li>
+            <li class="list-item"><a href="account/"><img src="{% static 'home/img/profile.svg' %}" alt=""></a>Account</li>
+
             {% if user.profile.url %}
-            <li id="user"><img id="pp" src="{{ MEDIA_URL }}{{ user.profile_photo.url }}" alt=""><p>{{ user.name }} {{ user.surname }}</p></li>
+                <li id="user"><img id="pp" src="{{ MEDIA_URL }}{{ user.profile_photo.url }}"
+                                   alt="">{{ user.name }} {{ user.surname }}</li>
             {% endif %}
-            <li><a href="logout/"><img src="{% static 'home/img/sign-out-alt.svg' %}" alt="logout   "></a></li>
+            <li class="list-item"><a href="logout/"><img src="{% static 'home/img/sign-out-alt.svg' %}"
+                                                         alt="logout "></a>Logout</li>
         </ul>
-
-
     {% endif %}
 </div>

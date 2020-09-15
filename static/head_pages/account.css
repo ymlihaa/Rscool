@@ -1,0 +1,62 @@
+.account-wrapper {
+    width: 100%;
+    height: 100%
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-form {
+    margin-top: 40px;
+    padding: 10px;
+    width: 60%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px;
+
+}
+
+.edit{
+    width: 100%;
+}
+.edit button{
+
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.account-info {
+    padding: 20px;
+    font-weight: bolder;
+}
+
+.lessons {
+    width: 70%;
+    padding: 20px;
+}
+
+#lesson-li {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #008CBA;
+    padding: 10px;
+    transition: box-shadow 0.2s ease 0s;
+
+}
+
+#lesson-li:hover {
+    background-color: rgba(0, 140, 186, .2);
+}
+
