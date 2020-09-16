@@ -22,7 +22,7 @@ def profileRedirect(request):
 
 	else:
 		# BURADA YETKİSİZ GİRİŞ SAYFASINI RENDER ET
-		return HttpResponse('not authenticate')
+		return render(request,'page/auth_pages/autherr.html')
 
 
 def accountRedirect(request):

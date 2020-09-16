@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'auth_pages/autherr.css' %}">
+{% endblock %}
+{% block content %}
+
+            <div class="text-content">
+                <p>Bu sayfayı görmek için lütfen giriş yapınız .</p>
+                <a href="/">Giriş Sayfasına gitmek için tıklayınız. </a>
+            </div>
+            <div class="image-content">
+                <img src="{% static 'auth_pages/img/notauth.svg' %}" alt="">
+            </div>
+
+{% endblock %}
