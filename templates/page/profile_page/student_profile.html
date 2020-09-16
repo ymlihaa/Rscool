@@ -14,7 +14,6 @@
     <div class="global-wrapper">
 
 
-
         <div class="lesson-wrapper flex-row">
             {% for i in data %}
                 <div class="lesson-card flex">
@@ -25,9 +24,11 @@
                         {{ i.description }}
                     </section>
                     <section class="lesson-redirect flex">
-                        <a href="/{{ i }}">
+                        <div id="lesson-li"><a href="{% url 'lesson' lessonID=i.id %}">
                             <button>Derse Git -></button>
-                        </a>
+                        </a></div>
+
+
                     </section>
                 </div>
             {% endfor %}

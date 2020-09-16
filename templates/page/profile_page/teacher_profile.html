@@ -23,7 +23,9 @@
                     {{ i.description }}
                 </section>
             <section class="lesson-redirect flex" >
-                <a href="/{{ i }}"><button>Derse Git -></button></a>
+                     <div id="lesson-li"><a href="{% url 'lesson' lessonID=i.id %}">
+                            <button>Derse Git -></button>
+                        </a></div>
             </section>
             </div>
             {% endfor %}

@@ -26,10 +26,10 @@
         {% endif %}
             <div class="lessons">
                 {% for foo in data %}
-                    <div id="lesson-li">{{ foo }}</div>
+                    <div id="lesson-li"><a href="{% url 'lesson' lessonID=foo.id  %}">{{ foo }}</a></div>
                 {% endfor %}
             </div>
         </div>
     </div>
-    
+
 {% endblock %}

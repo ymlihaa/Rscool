@@ -21,6 +21,8 @@ from django.contrib.auth.views import  LogoutView
 from django.conf import settings
 from django.views.generic import TemplateView
 from account.views import router
+from lesson.views import lesson_router
+
 from django.conf.urls.static import static
 urlpatterns = [
        path(
@@ -34,6 +36,7 @@ urlpatterns = [
 #     ),
     path('profile/',router.profileRedirect),
     path('profile/account/', router.accountRedirect),
+    path('profile/lessons/<int:lessonID>/',lesson_router.lessonRedirect, name = 'lesson'),
     path('admin/', admin.site.urls),
 
     url(r'^profile/logout/$', LogoutView.as_view(template_name='page/auth_pages/logout.html'), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),

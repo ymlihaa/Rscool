@@ -1,0 +1,40 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>lesson</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'lesson_pages/lesson.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="global-wrapper flex-row">
+
+        {% for foo in data %}
+
+
+        <div class="lesson-card flex">
+            <section class="lesson-name flex">
+                <p>{{ foo.title }}</p>
+            </section>
+            <section class="lesson-detail flex">
+                <li>{{ foo.title }}</li>
+                <li>{{ foo.description }}</li>
+                <li>{{ foo.create_at }}</li>
+                <li>{{ foo.update_at }}</li>
+            </section>
+            <div class="content-wrapper">
+                <img src="  {{ MEDIA_URL }} {{ foo.content.url }}" alt="" ></div>
+                <a href="{{ MEDIA_URL }} {{ foo.content.url }}"><button>Ödevi Görüntüle</button></a>
+            </div>
+
+                {% endfor %}
+
+
+    </div>
+
+</div>
+{% endblock %}

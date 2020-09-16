@@ -28,3 +28,4 @@ def profileRedirect(request):
 def accountRedirect(request):
 	Lesson_data = Lesson.objects.filter(userID=request.user.id)
 	return render(request, 'page/account.html', {'data': Lesson_data})
+
